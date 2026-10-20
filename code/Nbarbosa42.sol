@@ -24,7 +24,7 @@ contract Nbarbosa42 is ERC20 {
      *     2. Credits the deployer's address (`msg.sender`) in the `_balances` mapping.
      *     3. Emits a standard `Transfer` event from the zero address (0x0).
      */
-    constructor() ERC20("Nbarbosa42", "Nb42") {
+    constructor() ERC20("Nbarbosa42", "NB42") {
         // Initial supply: 1,000,000 tokens scaled by 10^18 decimals.
         uint256 initialSupply = 1000000 * 10 ** decimals();
 

@@ -1,11 +1,15 @@
 import hardhatEthers from "@nomicfoundation/hardhat-ethers";
+import hardhatNodeTestRunner from "@nomicfoundation/hardhat-node-test-runner";
 import * as dotenv from "dotenv";
 
 dotenv.config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 export default {
-  plugins: [hardhatEthers],
+  plugins: [
+    hardhatEthers,
+    hardhatNodeTestRunner
+  ],
   solidity: "0.8.28",
   paths: {
     sources: "./code",
@@ -14,10 +18,10 @@ export default {
     artifacts: "./artifacts"
   },
   networks: {
-    bscTestnet: {
+    sepolia: {
       type: "http",
-      url: "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
-      chainId: 97,
+      url: "https://ethereum-sepolia-rpc.publicnode.com",
+      chainId: 11155111,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
     }
   }

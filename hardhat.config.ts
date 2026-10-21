@@ -1,5 +1,6 @@
 import hardhatEthers from "@nomicfoundation/hardhat-ethers";
 import hardhatNodeTestRunner from "@nomicfoundation/hardhat-node-test-runner";
+import hardhatVerify from "@nomicfoundation/hardhat-verify";
 import * as dotenv from "dotenv";
 
 dotenv.config();
@@ -8,7 +9,8 @@ dotenv.config();
 export default {
   plugins: [
     hardhatEthers,
-    hardhatNodeTestRunner
+    hardhatNodeTestRunner,
+    hardhatVerify
   ],
   solidity: "0.8.28",
   paths: {
@@ -23,6 +25,11 @@ export default {
       url: "https://ethereum-sepolia-rpc.publicnode.com",
       chainId: 11155111,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
+    }
+  },
+  etherscan: {
+    apiKey: {
+      sepolia: "ZSNB4A3SDAQBF5APJSSJ4TTATV28NIU9YK"
     }
   }
 };

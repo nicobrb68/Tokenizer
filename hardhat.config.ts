@@ -27,9 +27,9 @@ export default {
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
     }
   },
-  etherscan: {
-    apiKey: {
-      sepolia: "ZSNB4A3SDAQBF5APJSSJ4TTATV28NIU9YK"
+  verify: {
+    etherscan: {
+      apiKey: process.env.ETHERSCAN_API_KEY
     }
   }
 };
